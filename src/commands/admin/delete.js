@@ -4,10 +4,11 @@ module.exports = {
   name: "delete",
   description: "Delete message, up to 100",
   usage: "delete <1-100>",
+  aliases: ["purge", "clear"],
   category: "admin",
   execute(bot, message, args) {
     if (!message.guild.me.hasPermission("MANAGE_MESSAGES"))
-    return message.channel.send(
+      return message.channel.send(
         errorEmbed("manage messages! (Manage Messages)", message)
       );
 

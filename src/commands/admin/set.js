@@ -6,6 +6,7 @@ const {
   setLeaveChannel,
   setAuditChannel,
   setWelcomeRole,
+  setModLog,
 } = require("../../utils/functions");
 
 module.exports = {
@@ -66,6 +67,10 @@ module.exports = {
       case "welcome-role":
         setWelcomeRole(guildId, item);
         message.channel.send(`Enabled welcome roles. Welcome role: ${item}`);
+        break;
+      case "mod-log":
+        setModLog(guildId, item);
+        message.channel.send(`Enabled mod logs. Mod log: ${item}`);
         break;
       default:
         return message.channel.send(`\`${option}\` is not a option!`);

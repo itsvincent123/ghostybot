@@ -5,7 +5,6 @@ const db = require("quick.db");
 const moment = require("moment");
 const { MessageEmbed } = require("discord.js");
 const { ownerId } = require("../../config.json");
-
 /**
  * @param {string} guildId
  * @param {string} userId
@@ -13,7 +12,6 @@ const { ownerId } = require("../../config.json");
  */
 const getUserMoney = (guildId, userId) =>
   db.fetch(`money_${guildId}_${userId}`);
-
 /**
  * @param {string} guildId
  * @param {string} userId
@@ -297,7 +295,23 @@ const getAuditChannel = (guildId) => db.fetch(`auditchannel_${guildId}`);
  * @param {String} guildId
  */
 const unsetAuditChannel = (guildId) => db.delete(`auditchannel_${guildId}`);
-
+/**
+ *
+ * @param {String} guildId
+ * @param {Object} channel
+ */
+const setModLog = (guildId, channel) => db.set(`modlog_${guildId}`, channel);
+/**
+ *
+ * @param {String} guildId
+ *
+ */
+const getModLog = (guildId) => db.fetch(`modlog_${guildId}`);
+/**
+ *
+ * @param {String} guildId
+ */
+const unsetModLog = (guildId) => db.delete(`modlog_${guildId}`);
 /**
  * @param {String} guildId
  * @param {Object} role
@@ -356,6 +370,9 @@ module.exports = {
   setAuditChannel,
   getAuditChannel,
   unsetAuditChannel,
+  setModLog,
+  getModLog,
+  unsetModLog,
   setWelcomeRole,
   getWelcomeRole,
   unsetWelcomeRole,

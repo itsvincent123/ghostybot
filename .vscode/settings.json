@@ -2,15 +2,18 @@
     "cSpell.words": [
         "Cmds",
         "Ghostybot",
+        "addcmd",
         "botinfo",
         "botowner",
         "bugreport",
         "channelinfo",
         "cooldown",
         "cooldowns",
+        "delcmd",
         "minecraft",
         "motd",
         "randomcolor",
+        "removecmd",
         "unlockchannel",
         "unsticky",
         "userinfo",
@@ -18,5 +21,6 @@
         "youtube",
         "ytld"
     ],
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "discord.enabled": true
 }
