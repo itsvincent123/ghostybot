@@ -2,17 +2,15 @@ const { MessageEmbed } = require("discord.js");
 const fetch = require("node-fetch");
 
 module.exports = {
-  name: "neko",
+  name: "gonewild",
   description: "None",
   category: "nsfw",
   async execute(bot, message) {
     if (!message.channel.nsfw)
       return message.channel.send("This channel is not a NSFW channel!");
-
     const data = await fetch(
-      "https://nekobot.xyz/api/image?type=neko"
+      "https://nekobot.xyz/api/image?type=gonewild"
     ).then((res) => res.json());
-
     const embed = new MessageEmbed()
       .setFooter(message.author.username)
       .setColor("BLUE")
